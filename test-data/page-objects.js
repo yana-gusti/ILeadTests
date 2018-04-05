@@ -1,6 +1,5 @@
 module.exports = {
     vikePage: {
-
         statusBar: by.css("[class='user-status-text']"),
         logoutButton: by.css(".select-after-element button"),
 

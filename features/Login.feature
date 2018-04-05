@@ -8,6 +8,8 @@ Feature: Login
 
   Scenario: Login with incorrect password
     # Login with bad password
+
     When Users enter to "Login" value "bogi7up+1@gmail.com"
     When Users enter to "Password" value "kju943puriojk23q90"
     When Users click on "loginBtn"
+

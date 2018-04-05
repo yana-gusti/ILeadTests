@@ -39,7 +39,7 @@ exports.config = {
     },
 
     // Spec patterns are relative to this directory.
-    specs: ['features/MyProfile.feature'],
+    specs: ['features/MyProfile.feature', 'features/Registration.feature'],
 
     onComplete: function () {
         browser.close();

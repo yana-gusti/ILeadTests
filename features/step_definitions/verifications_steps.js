@@ -15,12 +15,47 @@ Then(/^Check profile form is visible$/, () => {
     return expect(profileForm.isDisplayed()).to.eventually.equal(true);
 });
 
-Then(/^Check the text "([^"]*)"$/, (inText) => {
+Then(/^Verify the text "([^"]*)" in the "([^"]*)" tag$/, (inText, tag) => {
     browser.ignoreSynchronization = true;
-    let elem = element.all(pageObjects.vikeProfile.tagsH3).last();
 
-    return elem.getText().then(function (outText) {
-        console.log(outText);
-        return expect(outText).to.equal(inText)
-    })
+    switch(tag){
+        case "h1" :
+            let elem = element.all(pageObjects.vikeProfile.tagsH3).first();
+            return elem.getText().then(function (outText) {
+                return expect(outText).to.equal(inText)
+            });
+
+        case "h2" :
+            let elem1 = element.all(pageObjects.vikeProfile.tagsH3).last();
+            return elem1.getText().then(function (outText) {
+                return expect(outText).to.equal(inText)
+            });
+
+        case "span1" :
+            let elem2 = element.all(pageObjects.vikeProfile.tagsSpanTitle).first();
+            return elem2.getText().then(function (outText) {
+                return expect(outText).to.equal(inText)
+            });
+
+        case "span2" :
+            let elem3 = element.all(pageObjects.vikeProfile.tagsSpanTitle).last();
+            return elem3.getText().then(function (outText) {
+                return expect(outText).to.equal(inText)
+            });
+
+        case "error1" :
+            let elem4 = element.all(pageObjects.vikeProfile.tagsSpanError).first();
+            return elem4.getText().then(function (outText) {
+                return expect(outText).to.equal(inText)
+            });
+
+        case "error2" :
+            let elem5 = element.all(pageObjects.vikeProfile.tagsSpanError).last();
+            return elem5.getText().then(function (outText) {
+                return expect(outText).to.equal(inText)
+            });
+
+        default:
+            return false;
+    }
 });

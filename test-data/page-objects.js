@@ -24,14 +24,13 @@ module.exports = {
         closeProfileButton: by.css("[class='modal-close-btn']"),
         tagsH3: by.css("h3[class='section-title']"),
         tagsP: by.css("p[class='field-title']"),
-        tagsSpan: by.css("[class='field-error ']"),
+        tagsSpanTitle: by.css("[class='field-title']"),
+        tagsSpanError: by.css("[class='field-error ']"),
     },
 
     vikeNewProjectForm:{
         closeButton: by.css("button[class='modal-close-btn']"),
 
     },
-
     // emailInput: by.css("[name='email']"),
-
 };

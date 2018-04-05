@@ -7,7 +7,6 @@ Feature: REG1
 Feature: registration
 
   Background:
-
     When User navigates to the SignUp page
     Then Page title is equal to "VIKE"
 
@@ -24,3 +23,8 @@ Feature: registration
       When User enter his password to the field
       When User click the SignIn button
       Then User navigates to the Main page
+
+  Scenario: 3: Registration with already present e-mail
+    When User enter his e-mail: "illya.kalynchuk@thinkmobiles.com" to the field
+    When User click the SignUp button
+    Then Error with text "user with this email already exists." is displayed

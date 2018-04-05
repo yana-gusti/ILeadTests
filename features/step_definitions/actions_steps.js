@@ -1,4 +1,4 @@
-const {setDefaultTimeout, Given, When} = require('cucumber');
+const {Given, When} = require('cucumber');
 const pageObjects = require('../../test-data/page-objects');
 
 Given(/^Users prints comment "([^"]*)"$/, (comment) => {
@@ -69,6 +69,5 @@ When(/^Users click on "([^"]*)"$/, (item) => {
     }
 });
 // End Users clicks
-
 
 

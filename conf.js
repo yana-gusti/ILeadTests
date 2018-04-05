@@ -14,7 +14,7 @@ exports.config = {
         keepAlive: false,
         format: ['json:reports/results.json', 'progress'],
         strict: true,
-        tags: '@Regression'
+        tags: '@test' //@Regression
     },
 
     baseURL:"http://vike-fr.thinkmobiles.com/signIn",
@@ -39,7 +39,8 @@ exports.config = {
     },
 
     // Spec patterns are relative to this directory.
-    specs: ['features/MyProfile.feature', 'features/Registration.feature'],
+    specs: 'features/code.feature',
+        //['features/MyProfile.feature', 'features/Registration.feature'],
 
     onComplete: function () {
         browser.close();

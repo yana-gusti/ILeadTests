@@ -1,4 +1,9 @@
 @Regression
+Feature: REG1
+
+  Given User test
+
+@Regression
 Feature: registration
 
   Background:

@@ -9,16 +9,18 @@ exports.config = {
     cucumberOpts: {
         require: ['features/step_definitions/*.js', 'features/support/hooks.js'],
         keepAlive: false,
-        format: ['json:reports/results.json', 'progress'],
+        format: ['progress'], //'json:reports/results.json'
         strict: true,
         tags: '@Regression'
     },
+
     capabilities: {
         'browserName': 'chrome',
         chromeOptions: {
-            args: ['disable-infobars', 'start-fullscreen', 'no-sandbox',
-                'test-type=browser', 'disable-notifications', 'incognito',
+            args: ['disable-infobars', 'no-sandbox',
+                'test-type=browser', 'disable-notifications',
                 'disable-application-cache'],
+
             // Set download path and avoid prompting for download even though
             // this is already the default on Chrome but for completeness
             prefs: {
@@ -39,9 +41,8 @@ exports.config = {
         // Default is 1.
         maxInstances: 1,
     },
-
     // Spec patterns are relative to this directory.
-    specs: ['features/test-feature.feature'],
+    specs: ['features/Registration.feature'],
     // suites: {
     //     precondition: 'features/test.feature',
     //     suite1: ['features/test-feature.feature', 'features/test.feature'],
@@ -52,13 +53,13 @@ exports.config = {
         browser.close();
     },
 
-    plugins: [{
-        package: 'protractor-multiple-cucumber-html-reporter-plugin',
-        options: {
-            // read the options part https://www.npmjs.com/package/protractor-multiple-cucumber-html-reporter-plugin#options
-            automaticallyGenerateReport: true,
-            removeExistingJsonReportFile: true,
-            openReportInBrowser: true
-        }
-    }]
+    // plugins: [{
+    //     package: 'protractor-multiple-cucumber-html-reporter-plugin',
+    //     options: {
+    //         // read the options part https://www.npmjs.com/package/protractor-multiple-cucumber-html-reporter-plugin#options
+    //         automaticallyGenerateReport: true,
+    //         removeExistingJsonReportFile: true,
+    //         openReportInBrowser: true
+    //     }
+    // }]
 };

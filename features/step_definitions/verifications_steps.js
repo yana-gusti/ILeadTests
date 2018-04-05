@@ -3,60 +3,27 @@ const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 const expect = chai.expect;
-
+const pageObjects = require('../../test-data/page-objects');
 
 Then(/^Page title is equal to "([^"]*)"$/, (title) => {
-    return expect(browser.getTitle()).to.eventually.equal(title);
+    return expect(browser.driver.getTitle()).to.eventually.equal(title);
 });
 
-Then(/^History "([^"]*)" is equal to (\d+)$/, (repeater, count) => {
-    return expect(element.all(by.repeater(repeater)).count()).to.eventually.equal(count);
+Then(/^Error with text "([^"]*)" is displayed$/, (text) => {
+    browser.ignoreSynchronization = true;
+    const errorMessage = element(by.cssContainingText(pageObjects.vikeSignUp.errorMessage, text));
+    return expect(errorMessage.isDisplayed()).to.eventually.equal(true);
 });
 
-Then(/^Result "([^"]*)" is equal to "([^"]*)"$/, (resultLocator, number) => {
-    const result = element(by.css(resultLocator));
-    console.log("test1");
-    return result.getText().then(function (text) {
-        console.log(text);
-        return expect(text).to.equal(number);
-    });
-});
+// Then (/^No any errors on the screen$/,{timeout: 60 * 1000}, () => {
+//    const element =  browser.driver.findElement(pageObjects.vikeSignUp.errorMessage);
+//    return expect(element.isDisplayed()).to.eventually.equal(false);
+// });
 
-Then(/^Table cell "([^"]*)" with text "([^"]*)" is displayed$/, (locator, text) => {
-    const elem = element(by.cssContainingText(locator, text));
-    return expect(elem.isDisabled()).to.eventually.equal(true);
+Then (/^No any errors on the screen$/,{timeout: 60 * 1000}, () => {
+
+    return expect(browser.driver.isElementPresent(pageObjects.vikeSignUp.errorMessage).to.eventually.equal(false));
 });
 
 
-Then(/^Table "([^"]*)" match data:$/, (locator, table) => {
-    const headers = [];
-    const values = [];
-    const expectedTable = table.hashes();
-    const actualTable = element(by.css(locator));
-    const actual = actualTable.all(by.css("thead tr th")).each(function (header, i) {
-        header.getText().then(function (text) {
-            headers[i]=text;
-        });
-    }).then(function () {
-        actualTable.all(by.css("tbody tr")).each(function (row) {
-            let rowAsJson = {};
-            row.all(by.css("td")).each(function (cell, i) {
-                cell.getText().then(function (text) {
-                    rowAsJson[headers[i]]=text;
-                });
-            });
-            values.push(rowAsJson);
-
-        });
-    }).then(function () {
-        console.log("____________________________!!!!!!!");
-        console.log(values);
-        return values;
-    });
-
-    console.log(expectedTable);
-    console.log("____________________________");
-    console.log(actual);
-    return expect(actual).to.deep.eventually.equal(expectedTable);
-
-});
+// user with this email already exists

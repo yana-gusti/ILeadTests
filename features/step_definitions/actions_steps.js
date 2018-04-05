@@ -1,44 +1,74 @@
-const {Given, When} = require('cucumber');
+const {setDefaultTimeout, Given, When} = require('cucumber');
 const pageObjects = require('../../test-data/page-objects');
 
-Given(/^User prints comment "([^"]*)"$/, (comment) => {
+Given(/^Users prints comment "([^"]*)"$/, (comment) => {
     return console.log(comment);
 });
 
-When(/^User navigates to the Login page$/, () => {
-    return browser.get(pageObjects.calculatorPage.url);
+When(/^Users wait (\d+) sec.$/, (s) => {
+    return browser.driver.sleep(s * 1000);
 });
 
-When(/^User enters (\d+) in field "([^"]*)"$/, (number, model) => {
-    return element(by.model(model)).sendKeys(number);
+When(/^Users navigates to the Login page$/, () => {
+    return browser.driver.get(pageObjects.vikeSignIn.signUpURL);
 });
 
-When(/^User clicks "([^"]*)"$/, (id) => {
-    const elem = element(by.id(id));
-    return elem.click();
-});
+// Users enter to "webElement" value "value"
+When(/^Users enter to "([^"]*)" value "([^"]*)"$/, (webElement, val) => {
+    switch(webElement){
+        case "Login":
+            return browser.driver.findElement(pageObjects.vikeSignIn.loginInput).sendKeys(val);
 
-When(/^User selects "([^"]*)" from dropdown "([^"]*)"$/, (operator, parentLocator) => {
-    const selector = element(by.css(parentLocator));
-    const option = selector.all(by.css("option")).filter(function (item) {
-        return item.getText().then(function (text) {
-            if (text == operator) {
-                return true;
-            }
-        })
-    }).first();
+        case "Password":
+            return browser.driver.findElement(pageObjects.vikeSignIn.passwordInput).sendKeys(val);
 
-    return option.click();
-});
+        case "oldPassword":
+            return browser.driver.findElement(pageObjects.vikeProfile.oldPasswordInput).sendKeys(val);
 
-When(/^User enters (\d+) in "([^"]*)" field$/, (number, field) => {
-    switch (field) {
-        case ("first"):
-            return element(by.model(pageObjects.mainPage.firstfield)).sendKeys(number);
-        case ("second"):
-            return element(by.model(pageObjects.mainPage.secondfield)).sendKeys(number);
+        case "newPassword":
+            return browser.driver.findElement(pageObjects.vikeProfile.newPasswordInput).sendKeys(val);
+
         default:
-            return true;
+            return null;
     }
-
 });
+// End users enter . . .
+
+
+// Users click on "webElement"
+When(/^Users click on "([^"]*)"$/, (item) => {
+    switch(item){
+        case "closeProjectForm":
+            return browser.driver.findElement(pageObjects.vikeNewProjectForm.closeButton).click();
+
+        case "statusBar":
+            return browser.driver.findElement(pageObjects.vikePage.statusBar).click();
+
+        case "loginBtn":
+            return browser.driver.findElement(pageObjects.vikeSignIn.loginButton).click();
+
+        case "logOutBtn":
+            browser.ignoreSynchronization = true;
+            let buttons = element.all(pageObjects.vikePage.logoutButton).last();
+            return buttons.click();
+
+        case "myProfile":
+            return browser.driver.findElement(pageObjects.vikeProfile.profileButton).click();
+
+        case "saveBtn":
+            return browser.driver.findElement(pageObjects.vikeProfile.saveProfileButton).click();
+
+        case "closeProfileForm":
+            return browser.driver.findElement(pageObjects.vikeProfile.closeProfileButton).click();
+
+        case "":
+            return "";
+
+        default:
+            return false;
+    }
+});
+// End Users clicks
+
+
+

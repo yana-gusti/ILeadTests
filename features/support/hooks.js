@@ -1,7 +1,13 @@
 //Multiple Before hooks are executed in the order that they were defined. Multiple After hooks are executed in the reverse order that they were defined.
-const {After, Status} = require('cucumber');
+const { BeforeAll, After, Status } = require("cucumber");
+const { browser } = require("protractor");
+const { config } = require("../../conf.js");
+
 
 //https://github.com/cucumber/cucumber-js/blob/master/docs/support_files/attachments.md
+// BeforeAll({timeout: 10*1000}, () => {
+//     browser.get(config.baseURL);
+// });
 
 After(function(scenario) {
     var attach;

@@ -1,0 +1,6 @@
+.idea/
+node_modules/
+reports/
+*.log
+/src/automation/package-lock.json
+/src/automation/storage.json

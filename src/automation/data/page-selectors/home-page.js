@@ -34,4 +34,11 @@ module.exports = {
     checkFieldTitle:'.check-field-title',
     createKeyBtn:'#createKeyBtn',
     keysContainer: '#keysContainer',
+    emailsMenu:'#emailsMenu',
+    companiesMenu:'#companiesMenu',
+    contactsMenu:'#contactsMenu',
+    logout:'#logout',
+    mainTabsItemActive:'.main-tabs-item.active',
+    mainTabs:'.main-tabs',
+    sectionContentTitle:'.section-content-title',
 };

@@ -23,5 +23,11 @@ module.exports = {
     subscrBtn:'.btn.violet.form-field-button',
     mainFooter:'.main-footer',
     subscrResult:'.form-body-success.form-body-succes-foo',
-    subscrError:'.error.errorField.active'
+    subscrError:'.error.errorField.active',
+    feedbackIcon:'._hj-f5b2a1eb-9b07_feedback_minimized_label_text',
+    emotionsIcon:'._hj-f5b2a1eb-9b07_emotion_content._hj-f5b2a1eb-9b07_emotion_type_default',
+    loveEmotion:'[data-emotion-option=\'4\']',
+    commentField:'[data-bind=\'comment\']',
+    sendBtn:'._hj-f5b2a1eb-9b07_pull_right',
+    skipBtn:'[id=\'_hj-f5b2a1eb-9b07_action_skip\']'
 };

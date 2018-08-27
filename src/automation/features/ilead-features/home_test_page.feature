@@ -45,15 +45,16 @@ Feature: Check home page
     Then Page "mainPage|authPage" is displayed
     Then Button "mainPage|authBtn" is displayed
 
-    Scenario: 3: Testing the subscribe form in footer
-      Given User navigates to "ILead_Main_Page"
-      When User enters "sergey.com@mail.ru" in field "mainPage|subscrField"
-      When User clicks button "mainPage|subscrBtn" on section "mainPage|mainFooter"
-      When User waits 5 seconds
-      Then Result "mainPage|subscrResult" contains "Please check your inbox or spam folder" text
-      When User enters "sergey.com@mail." in field "mainPage|subscrField"
-      When User clicks button "mainPage|subscrBtn" on section "mainPage|mainFooter"
-      Then Result "mainPage|subscrError" contains "It doesn't look like correct email" text
+  Scenario: 3: Testing the subscribe form in footer
+    Given User navigates to "ILead_Main_Page"
+    When User enters "sergey.com@mail.ru" in field "mainPage|subscrField"
+    When User clicks button "mainPage|subscrBtn" on section "mainPage|mainFooter"
+    When User waits 5 seconds
+    Then Result "mainPage|subscrResult" contains "Please check your inbox or spam folder" text
+    When User refreshes page
+    When User enters "sergey.com@mail." in field "mainPage|subscrField"
+    When User clicks button "mainPage|subscrBtn" on section "mainPage|mainFooter"
+    Then Result "mainPage|subscrError" contains "It doesn't look like correct email" text
 
 #  Scenario: 4: Testing help icon
 #    Given User navigates to "ILead_Main_Page"

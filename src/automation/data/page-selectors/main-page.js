@@ -24,4 +24,4 @@ module.exports = {
     mainFooter:'.main-footer',
     subscrResult:'.form-body-success.form-body-succes-foo',
     subscrError:'.error.errorField.active'
-}
+};

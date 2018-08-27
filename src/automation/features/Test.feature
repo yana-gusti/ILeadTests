@@ -6,3 +6,4 @@ Feature: Test framework work
     And User clicks Search button "homePage|searchButton"
     Then Page title "#firstHeading" text is equal to "Isaac Newton"
     And Page URL contains "Isaac_Newton_Page"
+

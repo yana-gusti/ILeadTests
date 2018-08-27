@@ -90,3 +90,22 @@ Feature: Check the basics functional
 #    When User clicks button "homePage|createKeyBtn"
 #    Then Result "homePage|keysContainer" is displayed
 
+   Scenario: 10:Check UI home page
+     When User clicks button "homePage|maintabsitem" with text "Bulk checker"
+     When User clicks button "homePage|maintabsitem" with text "Use API"
+     When User clicks button "homePage|maintabsitem" with text "Check email"
+     Then Button "homePage|hideIfLoadingButton" text is equal to "Check"
+     Then Attribute "placeholder" of field "homePage|emailcheckfield" is equal to "mail@example.com"
+     Then Menu "homePage|emailsMenu" text is equal to "Emails"
+     Then Menu "homePage|companiesMenu" text is equal to "Companies"
+     Then Menu "homePage|contactsMenu" text is equal to "Contacts"
+     When User clicks menu "homePage|secondarymenulink" with text "API"
+     When User goes to 1 browser tab
+     Then Menu "homePage|logout" text is equal to "Sign out"
+     When User clicks menu "homePage|companiesMenu"
+     Then Button "homePage|emailVerifyBtn" text is equal to "Check"
+     Then Attribute "placeholder" of field "homePage|companiesIP" is equal to "example.com"
+     When User clicks menu "homePage|emailsMenu"
+     When User clicks button "homePage|maintabsitem" with text "Bulk checker"
+     Then Button "homePage|selectFileBtn" text is equal to "Click here to select file"
+     Then Attribute "placeholder" of field "homePage|textList" is equal to "mail@example.com"

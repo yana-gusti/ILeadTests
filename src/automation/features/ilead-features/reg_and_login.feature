@@ -46,5 +46,4 @@ Feature: Check login and registration functional
     When User clicks button "loginPage|signUpBtn"
     Then Tost "homePage|toastcontainer" text is equal to "Record with such data is already exists"
 
-#  Scenario: 4:
 

@@ -41,4 +41,5 @@ module.exports = {
     mainTabsItemActive:'.main-tabs-item.active',
     mainTabs:'.main-tabs',
     sectionContentTitle:'.section-content-title',
+    saveAsCsv:'#saveAsCsv',
 };

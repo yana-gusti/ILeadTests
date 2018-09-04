@@ -7,12 +7,20 @@ Feature: Check home page
     When User clicks button "mainPage|checkEmailButton" on section "mainPage|emailVerifySection"
     When User waits 3 seconds
     Then Result "mainPage|verifiedResult" contains "zinichuzh@gmail.com Mailbox exists! You can confidently send mail" text
-    When User clears text from field "mainPage|searchField"
+
+  Scenario: 2: Check email negative test with incorrect email
+    Given User navigates to "ILead_Main_Page"
     When User enters "zinichuzh@gmail" in field "mainPage|searchField"
     When User clicks button "mainPage|checkEmailButton" on section "mainPage|emailVerifySection"
     Then Result "mainPage|errorField" contains "It doesn't look like correct email" text
 
-  Scenario: 2: Testing of main header content
+  Scenario: 3: Check email negative test with empty field
+    Given User navigates to "ILead_Main_Page"
+    When User enters "" in field "mainPage|searchField"
+    When User clicks button "mainPage|checkEmailButton" on section "mainPage|emailVerifySection"
+    Then Result "mainPage|errorField" contains "It doesn't look like correct email" text
+
+  Scenario: 4: Testing of main header content
     Given User navigates to "ILead_Main_Page"
     When User clicks button "mainPage|tryIleadBtn"
     Then Page URL is equal to "https://app.ilead.io/#signIn"
@@ -45,7 +53,7 @@ Feature: Check home page
     Then Page "mainPage|authPage" is displayed
     Then Button "mainPage|authBtn" is displayed
 
-  Scenario: 3: Testing the subscribe form in footer
+  Scenario: 5: Testing the subscribe form in footer
     Given User navigates to "ILead_Main_Page"
     When User enters "sergey.com@mail.ru" in field "mainPage|subscrField"
     When User clicks button "mainPage|subscrBtn" on section "mainPage|mainFooter"
@@ -56,7 +64,7 @@ Feature: Check home page
     When User clicks button "mainPage|subscrBtn" on section "mainPage|mainFooter"
     Then Result "mainPage|subscrError" contains "It doesn't look like correct email" text
 
-  Scenario: 4: Feedback button testing
+  Scenario: 6: Feedback button testing
     Given User navigates to "ILead_Main_Page"
     When User waits 2 seconds
     When User clicks icon "mainPage|feedbackIcon"
@@ -67,12 +75,3 @@ Feature: Check home page
     When User clicks button "mainPage|skipBtn"
     Then Icon "._hj-f5b2a1eb-9b07_wordwrap" with text "Thank you for sharing your feedback with us!" is displayed
 
-
-#  Scenario: 5: Testing help icon
-#    Given User navigates to "ILead_Main_Page"
-#    When User waits 4 seconds
-#    Then Icon ".ztb-fbc-iconicstyle" is displayed
-#    When User clicks icon "._4bqf.promptButton"
-#    Then Page URL is equal to "https://www.facebook.com/plugins/live_chat/continue_as/?page_id=1545384755505147&request_id=4fbab017-8e5e-6038-0ea3-fec16383d033#_=_"
-#
-#

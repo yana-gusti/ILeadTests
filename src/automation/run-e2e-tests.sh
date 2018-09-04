@@ -1,4 +1,5 @@
 cd src/automation
+npm install
 # Use on Jenkins to start selenium server and trash the verbose error messages from webdriver
 java -Dwebdriver.chrome.webdriver="/data/app/thirdparty-bin/chromedriver" -jar /opt/selenium/selenium-server-standalone.jar &
 # Wait for port 4444 to be listening connections

@@ -12,6 +12,7 @@ exports.chromeCapabilities = {
             'disable-application-cache'],
         // Set download path and avoid prompting for download even though
         // this is already the default on Chrome but for completeness
+        // 'headless',
         prefs: {
             download: {
                 prompt_for_download: false,

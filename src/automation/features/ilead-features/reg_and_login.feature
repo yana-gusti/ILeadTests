@@ -16,7 +16,7 @@ Feature: Check login and registration functional
     When User enters "test@exedel.com" in textboxemail "loginPage|emailfield"
     When User enters "12345678" in textboxpassword "loginPage|passwordfield"
     When User clicks butttonLogin "loginPage|singInButton"
-    Then Page URL is equal to "ILead_Main_Page"
+    Then Tost "homePage|toastcontainer" text is equal to "Email is not registered"
     Given User navigates to "ILead_Start_Page"
     When User clicks button "loginPage|goToOlderFormButton"
     When User enters "ikokriashkina@exadel.com" in textboxemail "loginPage|emailfield"

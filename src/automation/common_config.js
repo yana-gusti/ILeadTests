@@ -7,7 +7,7 @@ const downloadDir = `${osHomedir() + path.sep + TEST_FOLDER_NAME}`;
 exports.chromeCapabilities = {
     browserName: 'chrome',
     chromeOptions: {
-        args: ['disable-infobars', 'disable-gpu', 'window-size=1200,768',
+        args: ['disable-infobars', 'headless','disable-gpu', 'window-size=1200,768',
             'test-type=browser', 'disable-notifications', 'incognito',
             'disable-application-cache'],
         // Set download path and avoid prompting for download even though

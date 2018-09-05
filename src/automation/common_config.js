@@ -28,7 +28,7 @@ exports.chromeCapabilities = {
     // If this is set to be true, specs will be sharded by file
     // (i.e. all files to be run by this set of capabilities will run in parallel).
     // Default is false.
-    shardTestFiles: false,
+    shardTestFiles: true,
 
     // Maximum number of browser instances that can run in parallel for this
     // set of capabilities. This is only needed if shardTestFiles is true.

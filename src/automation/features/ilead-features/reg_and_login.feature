@@ -33,7 +33,7 @@ Feature: Check login and registration functional
     When User clicks button "loginPage|goToOlderFormButton"
     When User clicks button "loginPage|authNavItem" with text "Sign Up"
     When User clicks button "loginPage|signUpBtn"
-    Then Tost "homePage|toastcontainer" text is equal to "Please, enter an corporate email"
+    Then Tost "homePage|toastcontainer" text is equal to "Please, fill the fields. All fields are required"
     When User enters "Yana" in firstNameFiled "loginPage|firstName"
     When User enters "Kokriashkina" in lastNameFiled "loginPage|lastName"
     When User enters "ikokriashkina@exadel.com" in emailFiled "loginPage|email"

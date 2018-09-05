@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 #   Use this script to run tests
-cd src/automation
 npm install
 npm run webdriver-update
 npm run webdriver &

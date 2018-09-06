@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #   Use this script to run tests
+lsof -t -i :4444 | xargs kill
 npm i
 npm run webdriver-update
 npm run webdriver &

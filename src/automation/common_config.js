@@ -121,7 +121,7 @@ exports.common_config = {
         'package': 'protractor-multiple-cucumber-html-reporter-plugin',
         options: {
             // read the options part https://www.npmjs.com/package/protractor-multiple-cucumber-html-reporter-plugin#options
-            automaticallyGenerateReport: true,
+            automaticallyGenerateReport:true,
             removeExistingJsonReportFile: true,
             openReportInBrowser: true,
             removeOriginalJsonReportFile: true,

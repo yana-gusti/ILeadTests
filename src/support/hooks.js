@@ -76,3 +76,26 @@ After(function (testCase) {
 After(function () {
     return fileHelper.removeDirectory(browser.params.basePath);
 });
+
+After(function() {
+
+    function getWindowLocation() {
+        return window.location;
+    }
+
+    function clearStorage() {
+        window.sessionStorage.clear();
+        window.localStorage.clear();
+    }
+
+    return browser.executeScript(getWindowLocation).then(function(location) {
+        // NB If no page is loaded in the scneario then calling clearStorage will cause exception
+        // so guard against this by checking hostname (If no page loaded then hostname == '')
+        if (location.hostname.length > 0) {
+            return browser.executeScript(clearStorage);
+        }
+        else {
+            return Promise.resolve();
+        }
+    });
+});

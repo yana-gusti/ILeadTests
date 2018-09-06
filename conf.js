@@ -83,11 +83,9 @@ exports.config = thisModule = {
         options: {
             // read the options part https://www.npmjs.com/package/protractor-multiple-cucumber-html-reporter-plugin#options
             automaticallyGenerateReport: true,
-            removeExistingJsonReportFile: true,
-            openReportInBrowser: false,
-            removeOriginalJsonReportFile: true,
             displayDuration: true,
-            durationInMS: true
+            durationInMS: true,
+            saveCollectedJSON: true
         }
     }]
 };

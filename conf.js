@@ -18,67 +18,7 @@ exports.config = thisModule = {
 
             shardTestFiles: true,
             maxInstances: 5,
-            specs: ['features/Web/*.feature', 'features/API/*.feature'],
-        },
-        {
-            'browserName': 'iPad',
-            chromeOptions: {
-                args: ['disable-infobars', 'no-sandbox', 'headless', 'window-size=1366,1024',
-                    'disable-notifications', 'incognito',
-                    'disable-application-cache'],
-                mobileEmulation: {
-                    "device": 'Apple iPad Pro',
-                }
-            },
-
-            shardTestFiles: true,
-            maxInstances: 5,
-            specs: ['features/Web/*.feature'],
-        },
-        {
-            'browserName': 'iPhone',
-            chromeOptions: {
-                args: ['disable-infobars', 'no-sandbox', 'headless', 'window-size=375,812',
-                    'disable-notifications', 'incognito',
-                    'disable-application-cache'],
-                mobileEmulation: {
-                    "device": 'Apple iPhone X',
-                }
-            },
-
-            shardTestFiles: true,
-            maxInstances: 5,
-            specs: ['features/Web/*.feature'],
-        },
-        {
-            'browserName': 'Nexus',
-            chromeOptions: {
-                args: ['disable-infobars', 'no-sandbox', 'headless', 'window-size=412,732',
-                    'disable-notifications', 'incognito',
-                    'disable-application-cache'],
-                mobileEmulation: {
-                    "device": 'Google Nexus 6',
-                }
-            },
-
-            shardTestFiles: true,
-            maxInstances: 5,
-            specs: ['features/Web/*.feature'],
-        },
-        {
-            'browserName': 'Tablet',
-            chromeOptions: {
-                args: ['disable-infobars', 'no-sandbox', 'headless', 'window-size=800,1280',
-                    'disable-notifications', 'incognito',
-                    'disable-application-cache'],
-                mobileEmulation: {
-                    "device": 'Google Nexus 10',
-                }
-            },
-
-            shardTestFiles: true,
-            maxInstances: 5,
-            specs: ['features/Web/*.feature'],
+            specs: ['src/features/ilead-features/*.feature']
         }
     ],
 

@@ -29,13 +29,8 @@
   "scripts": {
     "lint": "eslint .",
     "configure-globals": "npm run config/configure-globals.js",
-    "prestart-webdriver": "webdriver-manager update",
-    "start-webdriver": "webdriver-manager start",
-    "start-webdriver-jenkins": "bash run-e2e-tests.sh",
-    "test-local": "protractor protractor.local.conf.js",
-    "test-sauceLab": "protractor protractor.sauce.conf.js",
-    "test-sauceLab-ie": "protractor protractor.sauce.conf.js --BROWSER_NAME \"internet explorer\" --BROWSER_VERSION latest --PLATFORM \"windows 10\"",
-    "test-smoke": "protractor protractor.smoke.conf.js",
-    "test-aws": "protractor protractor.conf.aws.js"
+    "webdriver-update": "webdriver-manager update",
+    "webdriver": "webdriver-manager start",
+    "test": "protractor conf.js"
   }
 }

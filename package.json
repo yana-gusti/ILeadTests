@@ -29,7 +29,7 @@
   "scripts": {
     "configure-globals": "npm run config/configure-globals.js",
     "webdriver-update": "webdriver-manager update --gecko false --versions.chrome 2.37 --versions.standalone 3.0.0",
-    "webdriver": "webdriver-manager start",
+    "webdriver": "webdriver-manager start --versions.chrome 2.37 --versions.standalone 3.0.0",
     "webdriver-shutdown": "webdriver-manager shutdown",
     "test": "protractor conf.js"
   }

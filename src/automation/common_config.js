@@ -29,43 +29,13 @@ exports.chromeCapabilities = {
     // If this is set to be true, specs will be sharded by file
     // (i.e. all files to be run by this set of capabilities will run in parallel).
     // Default is false.
-    shardTestFiles: false,
+    shardTestFiles: true,
 
     // Maximum number of browser instances that can run in parallel for this
     // set of capabilities. This is only needed if shardTestFiles is true.
     // Default is 1.
     maxInstances: 3
 };
-
-exports.firefoxCapabilities = {
-    browserName: 'firefox',
-    'moz:firefoxOptions': {
-        'args': ['-safe-mode', '-window-size=1200,768', '-private'],
-        'prefs': {
-            'browser.download.folderList': 2,
-            'browser.download.dir': downloadDir,
-            'browser.download.useDownloadDir': true,
-            'browser.download.manager.showWhenStarting': false,
-            'browser.helperApps.neverAsk.saveToDisk': 'application/pdf, application/postscript, ' +
-            'application/msword, application/wordperfect, application/rtf, ' +
-            'application/vnd.ms-excel, application/vnd.ms-powerpoint, text/html, ' +
-            'text/plain, application/x-troff, application/x-troff-man, application/x-dvi, ' +
-            'application/mathematica, application/octet-stream'
-        },
-        'log': {'level': 'error'}
-    },
-    // allows different specs to run in parallel.
-    // If this is set to be true, specs will be sharded by file
-    // (i.e. all files to be run by this set of capabilities will run in parallel).
-    // Default is false.
-    shardTestFiles:false,
-
-    // Maximum number of browser instances that can run in parallel for this
-    // set of capabilities. This is only needed if shardTestFiles is true.
-    // Default is 1.
-    maxInstances: 3
-};
-
 
 exports.common_config = {
     seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
@@ -117,6 +87,7 @@ exports.common_config = {
         fileDownloadGlobalWait: 300000 //5 min
         //definedParameterTypes: require('./features/support/parameter-types.js')
     },
+    maxSessions: 3,
     plugins: [{
         'package': 'protractor-multiple-cucumber-html-reporter-plugin',
         options: {

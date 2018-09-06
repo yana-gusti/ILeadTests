@@ -28,7 +28,7 @@
   },
   "scripts": {
     "configure-globals": "npm run config/configure-globals.js",
-    "webdriver-update": "webdriver-manager update",
+    "webdriver-update": "webdriver-manager update --versions.chrome 2.37",
     "webdriver": "webdriver-manager start",
     "webdriver-shutdown": "webdriver-manager shutdown",
     "test": "protractor conf.js"

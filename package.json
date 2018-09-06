@@ -31,6 +31,7 @@
     "configure-globals": "npm run config/configure-globals.js",
     "webdriver-update": "webdriver-manager update",
     "webdriver": "webdriver-manager start",
+    "webdriver-shutdown": "webdriver-manager shutdown",
     "test": "protractor conf.js"
   }
 }

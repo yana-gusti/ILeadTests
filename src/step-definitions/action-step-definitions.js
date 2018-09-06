@@ -2,10 +2,9 @@ require('../support/parameter-types');
 const {When} = require('cucumber');
 const {Given} = require('cucumber');
 const helper = require('../helpers/element-helper.js');
-const stringHelper = require('../helpers/string-helper.js');
+const stringHelper = require('../helpers/string-helper');
 const path = require('path');
-const {elementHelper} = require('../index.js');
-const loginPage = require('../../data/page-selectors/login-page');
+const loginPage = require('../data/page-selectors/login-page');
 
 const {setDefaultTimeout} = require('cucumber');
 

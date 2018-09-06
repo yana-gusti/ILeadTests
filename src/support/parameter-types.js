@@ -1,8 +1,8 @@
 const {defineParameterType} = require('cucumber');
-const {stringHelper} = require('../index.js');
-const userData = require('../../data/user-data');
-const page = require('../../data/pages-enum');
-const fileDataHash = require('../../data/file-data-hash.js');
+const userData = require('../data/user-data');
+const page = require('../data/pages-enum');
+const fileDataHash = require('../data/file-data-hash.js');
+const stringHelper = require('../helpers/string-helper');
 
 /**
  * @STRING_REGEXP

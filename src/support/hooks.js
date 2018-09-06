@@ -3,7 +3,8 @@
  * Multiple After hooks are executed in the reverse order that they were defined.
  */
 const {Before, After, Status} = require('cucumber');
-const {endpointHelper, fileHelper} = require('../index.js');
+const endpointHelper = require('../helpers/endpoint-helper');
+const fileHelper = require('../helpers/file-helper');
 const remote = require('selenium-webdriver/remote');
 
 /** Switch off wait for angular before each test.

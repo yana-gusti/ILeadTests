@@ -1,5 +1,5 @@
 .idea/
 node_modules/
-reports/
+/src/automation/reports/
 *.log
 /src/automation/package-lock.json

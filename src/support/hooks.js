@@ -74,6 +74,7 @@ After(function (testCase) {
 
 //Clean base directory if it exists and not empty
 After(function () {
+    console.log(browser.params.basePath);
     return fileHelper.removeDirectory(browser.params.basePath);
 });
 

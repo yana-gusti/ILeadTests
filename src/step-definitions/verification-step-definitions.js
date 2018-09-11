@@ -42,6 +42,7 @@ Then('Downloaded file with name contains {text} exists', function (name) {
     const array = name.split('.');
     const tempname = array[0] + data + "." + array[1];
     const filePath = browser.params.basePath + fileSep + tempname;//generate file path
+    console.log(filePath);
     return expect(fileHelper.isFileExist(filePath)).to.eventually.equal(true);
 });
 Then('Attribute {string} of {detail} {css} is equal to {string}', function (attribute, _, cssLocator, value) {

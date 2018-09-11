@@ -45,8 +45,6 @@ exports.config = thisModule = {
         maxInstances: 3,
     },
 
-    restartBrowserBetweenTests:true,
-
     specs: ['src/features/ilead-features/*.feature'],
 
     baseURL: '',

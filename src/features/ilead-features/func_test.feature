@@ -102,36 +102,36 @@ Feature: Check the basics functional
     When User clicks button "homePage|logout"
 
   Scenario: 10:Check UI home page
-     When User clicks button "homePage|maintabsitem" with text "Bulk checker"
-     When User clicks button "homePage|maintabsitem" with text "Use API"
-     When User clicks button "homePage|maintabsitem" with text "Check email"
-     Then Button "homePage|hideIfLoadingButton" text is equal to "Check"
-     Then Attribute "placeholder" of field "homePage|emailcheckfield" is equal to "mail@example.com"
-     Then Menu "homePage|emailsMenu" text is equal to "Emails"
-     Then Menu "homePage|companiesMenu" text is equal to "Companies"
-     Then Menu "homePage|contactsMenu" text is equal to "Contacts"
-     When User clicks menu "homePage|secondarymenulink" with text "API"
-     When User goes to 1 browser tab
-     Then Menu "homePage|logout" text is equal to "Sign out"
-     When User clicks menu "homePage|companiesMenu"
-     Then Button "homePage|hideIfLoading" text is equal to "Check"
-     Then Attribute "placeholder" of field "homePage|companiesIP" is equal to "example.com"
-     When User clicks menu "homePage|emailsMenu"
-     When User clicks button "homePage|maintabsitem" with text "Bulk checker"
-     Then Button "homePage|selectFileBtn" text is equal to "Click here to select file"
-     Then Attribute "placeholder" of field "homePage|textList" is equal to "mail@example.com"
+    When User clicks button "homePage|maintabsitem" with text "Bulk checker"
+    When User clicks button "homePage|maintabsitem" with text "Use API"
+    When User clicks button "homePage|maintabsitem" with text "Check email"
+    Then Button "homePage|hideIfLoadingButton" text is equal to "Check"
+    Then Attribute "placeholder" of field "homePage|emailcheckfield" is equal to "mail@example.com"
+    Then Menu "homePage|emailsMenu" text is equal to "Emails"
+    Then Menu "homePage|companiesMenu" text is equal to "Companies"
+    Then Menu "homePage|contactsMenu" text is equal to "Contacts"
+    When User clicks menu "homePage|secondarymenulink" with text "API"
+    When User goes to 1 browser tab
+    Then Menu "homePage|logout" text is equal to "Sign out"
+    When User clicks menu "homePage|companiesMenu"
+    Then Button "homePage|hideIfLoading" text is equal to "Check"
+    Then Attribute "placeholder" of field "homePage|companiesIP" is equal to "example.com"
+    When User clicks menu "homePage|emailsMenu"
+    When User clicks button "homePage|maintabsitem" with text "Bulk checker"
+    Then Button "homePage|selectFileBtn" text is equal to "Click here to select file"
+    Then Attribute "placeholder" of field "homePage|textList" is equal to "mail@example.com"
     When User clicks button "homePage|logout"
 
-  Scenario: 11:Check downoloads file
-    When User clicks button "homePage|mainMenuLink" with text "Contacts"
-    When User clicks button "homePage|saveAsCsv"
-    Then Downloaded file with name contains "iLead_contacts_.csv" exists
-    When User clicks button "homePage|mainMenuLink" with text "Emails"
-    When User clicks button "homePage|maintabsitem" with text "Bulk checker"
-    When User clicks listItem "homePage|listItemName" with text "Emails Bulk(192).csv"
-    When User clicks button "homePage|saveAsCsv"
-    Then Downloaded file with name contains "Emails Bulk(192),.csv" exists
-    When User clicks button "homePage|logout"
+#  Scenario: 11:Check downoloads file
+#    When User clicks button "homePage|mainMenuLink" with text "Contacts"
+#    When User clicks button "homePage|saveAsCsv"
+#    Then Downloaded file with name contains "iLead_contacts_.csv" exists
+#    When User clicks button "homePage|mainMenuLink" with text "Emails"
+#    When User clicks button "homePage|maintabsitem" with text "Bulk checker"
+#    When User clicks listItem "homePage|listItemName" with text "Emails Bulk(192).csv"
+#    When User clicks button "homePage|saveAsCsv"
+#    Then Downloaded file with name contains "Emails Bulk(192),.csv" exists
+#    When User clicks button "homePage|logout"
 
   Scenario: 12: Check domain search(positive and negativ case)
     When User clicks button "homePage|maintabsitem" with text "Domain search"

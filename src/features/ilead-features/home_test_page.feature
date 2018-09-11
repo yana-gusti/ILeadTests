@@ -22,8 +22,6 @@ Feature: Check home page
 
   Scenario: 4: Testing of main header content
     Given User navigates to "ILead_Main_Page"
-    When User clicks button "mainPage|tryIleadBtn"
-    Then Page URL is equal to "https://app.ilead.io/#signIn"
     Given User navigates to "ILead_Main_Page"
     When User clicks button "mainPage|companiesBtn"
     When User enters "samsung.com" in field "mainPage|searchField"

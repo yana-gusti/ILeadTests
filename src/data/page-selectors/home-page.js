@@ -42,4 +42,5 @@ module.exports = {
     mainTabs:'.main-tabs',
     sectionContentTitle:'.section-content-title',
     saveAsCsv:'#saveAsCsv',
+    hideIfLoading:'.hide-if-loading'
 };

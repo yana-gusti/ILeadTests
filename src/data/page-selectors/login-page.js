@@ -8,7 +8,7 @@ module.exports = {
     loginInput: '#username',
     passwordInput: '#password',
     loginButton: '#loginButton',
-    goToOlderFormButton: "#goToOlderForm",
+    goToOlderFormButton: ".auth-older_link",
     emailfield: '#signInEmail',
     passwordfield: '#signInPassword',
     singInButton: '#logInBtn',

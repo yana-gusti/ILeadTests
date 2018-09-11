@@ -1,15 +1,17 @@
 Feature: Check login and registration functional
 
   Scenario: 1: Check login positiv case
-    Given User navigates to "ILead_Start_Page"
+    Given User navigates to "ILead_SignIn_Page"
     When User clicks button "loginPage|goToOlderFormButton"
     When User enters "kokriashkina@exedel.com" in textboxemail "loginPage|emailfield"
     When User enters "12345678" in textboxpassword "loginPage|passwordfield"
     When User clicks butttonLogin "loginPage|singInButton"
     Then Page URL is equal to "ILead_Home_Page"
+    When User clicks menu "homePage|secondarymenulink" with text "Sign out"
 
   Scenario: 2: Check login negative case
-    Given User navigates to "ILead_Start_Page"
+    Given User navigates to "ILead_SignIn_Page"
+    When User waits for angular "page"
     When User clicks button "loginPage|goToOlderFormButton"
     When User clicks butttonLogin "loginPage|singInButton"
     Then Tost "homePage|toastcontainer" text is equal to "Bad Request"
@@ -29,7 +31,8 @@ Feature: Check login and registration functional
     Then Tost "homePage|toastcontainer" text is equal to "Bad Request"
 
   Scenario: 3: Check Sign In
-    Given User navigates to "ILead_Start_Page"
+    Given User navigates to "ILead_SignIn_Page"
+    When User waits for angular "page"
     When User clicks button "loginPage|goToOlderFormButton"
     When User clicks button "loginPage|authNavItem" with text "Sign Up"
     When User clicks button "loginPage|signUpBtn"

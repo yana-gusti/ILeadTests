@@ -42,5 +42,8 @@ module.exports = {
     mainTabs:'.main-tabs',
     sectionContentTitle:'.section-content-title',
     saveAsCsv:'#saveAsCsv',
-    hideIfLoading:'.hide-if-loading'
+    hideIfLoading:'.hide-if-loading',
+    domainSearchBtn: '#domainSearchBtn',
+    domainSearchInpt: '#domainSearchInpt',
+    count:'.count',
 };

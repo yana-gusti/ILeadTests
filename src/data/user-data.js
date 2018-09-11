@@ -5,7 +5,7 @@ module.exports = {
             AWS:'https://app.ilead.io',
             QA: 'https://app.ilead.io'
         },
-        Ilead_SignIn_Page: {
+        ILead_SignIn_Page: {
             LOCAL:'https://app.ilead.io/#signIn',
             AWS:'https://app.ilead.io/#signIn',
             QA:'https://app.ilead.io/#signIn'

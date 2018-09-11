@@ -105,7 +105,7 @@ Feature: Check the basics functional
      When User goes to 1 browser tab
      Then Menu "homePage|logout" text is equal to "Sign out"
      When User clicks menu "homePage|companiesMenu"
-     Then Button "homePage|emailVerifyBtn" text is equal to "Check"
+     Then Button "homePage|hideIfLoading" text is equal to "Check"
      Then Attribute "placeholder" of field "homePage|companiesIP" is equal to "example.com"
      When User clicks menu "homePage|emailsMenu"
      When User clicks button "homePage|maintabsitem" with text "Bulk checker"

@@ -122,16 +122,16 @@ Feature: Check the basics functional
     Then Attribute "placeholder" of field "homePage|textList" is equal to "mail@example.com"
     When User clicks button "homePage|logout"
 
-#  Scenario: 11:Check downoloads file
-#    When User clicks button "homePage|mainMenuLink" with text "Contacts"
-#    When User clicks button "homePage|saveAsCsv"
-#    Then Downloaded file with name contains "iLead_contacts_.csv" exists
-#    When User clicks button "homePage|mainMenuLink" with text "Emails"
-#    When User clicks button "homePage|maintabsitem" with text "Bulk checker"
-#    When User clicks listItem "homePage|listItemName" with text "Emails Bulk(192).csv"
-#    When User clicks button "homePage|saveAsCsv"
-#    Then Downloaded file with name contains "Emails Bulk(192),.csv" exists
-#    When User clicks button "homePage|logout"
+  Scenario: 11:Check downoloads file
+    When User clicks button "homePage|mainMenuLink" with text "Contacts"
+    When User clicks button "homePage|saveAsCsv"
+    Then Downloaded file with name contains "iLead_contacts_.csv" exists
+    When User clicks button "homePage|mainMenuLink" with text "Emails"
+    When User clicks button "homePage|maintabsitem" with text "Bulk checker"
+    When User clicks listItem "homePage|listItemName" with text "Emails Bulk(192).csv"
+    When User clicks button "homePage|saveAsCsv"
+    Then Downloaded file with name contains "Emails Bulk(192),.csv" exists
+    When User clicks button "homePage|logout"
 
   Scenario: 12: Check domain search(positive and negativ case)
     When User clicks button "homePage|maintabsitem" with text "Domain search"

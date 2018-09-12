@@ -2,7 +2,7 @@ const osHomedir = require('os').homedir;
 const fs = require('fs');
 var path = require('path');
 var fileSep = path.sep;
-const downloadDir = "testfile" + fileSep + "test";
+const downloadDir = "test_file" + fileSep + "test";
 
 exports.config = thisModule = {
     seleniumAddress: 'http://127.0.0.1:4444/wd/hub',

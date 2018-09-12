@@ -44,10 +44,17 @@ Then('Downloaded file with name contains {text} exists', function (name) {
     if(process.platform==="linux")
     {
         var exec = require('child_process').exec;
-        let shell_command= "chmod +x " + browser.params.basePath + fileSep + tempname;
-        var cmd = shell_command;
-        console.log(shell_command)
-        exec(cmd);
+        var child;
+        let shell_command= "chmod +x " + browser.params.basePath;
+        const cmd = shell_command;
+        console.log(shell_command);
+        //require('child_process').exec(cmd.toString());
+        child = exec(shell_command, function (error, stdout, stderr) {
+            if (error !== null) {
+                console.log('exec error: ' + error);
+            }
+        });
+
     }
     const filePath = browser.params.basePath + fileSep + tempname;//generate file path
     console.log(filePath);

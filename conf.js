@@ -45,8 +45,8 @@ exports.config = thisModule = {
         maxInstances: 5,
     },
 
-    //specs: ['src/features/ilead-features/*.feature'],
-    specs:['src/features/ilead-features/func_test.feature'],
+    specs: ['src/features/ilead-features/*.feature'],
+    //specs:['src/features/ilead-features/func_test.feature'],
 
     baseURL: '',
 

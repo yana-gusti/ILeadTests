@@ -72,7 +72,7 @@ Feature: Check the basics functional
     Then Result "homePage|boxMain" text is equal to "SAMSUNG"
     When User clicks button "homePage|logout"
 
-  Scenario: 8:Check bulk checker functional
+#  Scenario: 8:Check bulk checker functional
 #    When User clicks button "homePage|maintabsitem" with text "Bulk checker"
 #    When User clicks listItem "homePage|listItemName" with text "Emails Bulk(166).csv"
 #    When User clicks checkbox "homePage|checkFieldIndicator" on row "homePage|listHolder"

@@ -41,6 +41,14 @@ Then('Downloaded file with name contains {text} exists', function (name) {
     let data = day + "-" + month + "-" + year + "_" + hours + "-" + minuts;
     const array = name.split('.');
     const tempname = array[0] + data + "." + array[1];
+    if(process.platform==="linux")
+    {
+        var exec = require('child_process').exec;
+        let shell_command= "chmod +x " + browser.params.basePath + fileSep + tempname;
+        var cmd = shell_command;
+        console.log(shell_command)
+        exec(cmd);
+    }
     const filePath = browser.params.basePath + fileSep + tempname;//generate file path
     console.log(filePath);
     return expect(fileHelper.isFileExist(filePath)).to.eventually.equal(true);

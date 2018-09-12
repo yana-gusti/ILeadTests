@@ -73,28 +73,28 @@ Feature: Check the basics functional
     When User clicks button "homePage|logout"
 
   Scenario: 8:Check bulk checker functional
-    When User clicks button "homePage|maintabsitem" with text "Bulk checker"
-    When User clicks listItem "homePage|listItemName" with text "Emails Bulk(166).csv"
-    When User clicks checkbox "homePage|checkFieldIndicator" on row "homePage|listHolder"
-    When User clicks button "homePage|addLeads"
-    When User clicks button "homePage|mainMenuLink" with text "Contacts"
-    Then Field "homePage|statusCheckboxInput" text is not equal to ""
-    Then Table "homePage|listHolder" is enabled
-    Given User navigates to "ILead_Home_Page"
-    When User clicks button "homePage|maintabsitem" with text "Bulk checker"
-    When User enters "ferens.dmitro@yandex.ru" in TextBox "homePage|textList"
-    When User presses Enter key
-    When User enters "dimson.song@example.com" in TextBox "homePage|textList"
-    When User presses Enter key
-    When User enters "somthingemail@gmail.com" in TextBox "homePage|textList"
-    When User clicks button "homePage|createNewVerificationBulkBtn"
-    When User waits 10 seconds
-    When User refreshes page
-    When User clicks 1 item in "homePage|listItemValue" collection
-    When User refreshes page
-    Then EmailFilter "homePage|checkFieldTitle" text is equal to "100 % (2)"
-    Given User navigates to "ILead_Home_Page"
-    When User clicks button "homePage|logout"
+#    When User clicks button "homePage|maintabsitem" with text "Bulk checker"
+#    When User clicks listItem "homePage|listItemName" with text "Emails Bulk(166).csv"
+#    When User clicks checkbox "homePage|checkFieldIndicator" on row "homePage|listHolder"
+#    When User clicks button "homePage|addLeads"
+#    When User clicks button "homePage|mainMenuLink" with text "Contacts"
+#    Then Field "homePage|statusCheckboxInput" text is not equal to ""
+#    Then Table "homePage|listHolder" is enabled
+#    Given User navigates to "ILead_Home_Page"
+#    When User clicks button "homePage|maintabsitem" with text "Bulk checker"
+#    When User enters "ferens.dmitro@yandex.ru" in TextBox "homePage|textList"
+#    When User presses Enter key
+#    When User enters "dimson.song@example.com" in TextBox "homePage|textList"
+#    When User presses Enter key
+#    When User enters "somthingemail@gmail.com" in TextBox "homePage|textList"
+#    When User clicks button "homePage|createNewVerificationBulkBtn"
+#    When User waits 10 seconds
+#    When User refreshes page
+#    When User clicks 1 item in "homePage|listItemValue" collection
+#    When User refreshes page
+#    Then EmailFilter "homePage|checkFieldTitle" text is equal to "100 % (2)"
+#    Given User navigates to "ILead_Home_Page"
+#    When User clicks button "homePage|logout"
 
   Scenario: 9:Check create key for use API
     When User clicks button "homePage|maintabsitem" with text "Use API"

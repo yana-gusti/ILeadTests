@@ -12,6 +12,7 @@ exports.config = thisModule = {
     framework: 'custom',
     // path relative to the current config file
     frameworkPath: require.resolve('protractor-cucumber-framework'),
+    restartBrowserBetweenTests: true,
     capabilities: {
         'browserName': 'chrome',
         acceptSslCerts: true,

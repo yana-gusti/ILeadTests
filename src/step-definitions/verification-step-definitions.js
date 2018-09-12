@@ -45,7 +45,7 @@ Then('Downloaded file with name contains {text} exists', function (name) {
     {
         var exec = require('child_process').exec;
         var child;
-        let shell_command= "chmod +x " + browser.params.basePath;
+        let shell_command = "chmod +x " + browser.params.basePath + fileSep + tempname;
         const cmd = shell_command;
         console.log(shell_command);
         //require('child_process').exec(cmd.toString());

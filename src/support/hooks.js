@@ -7,6 +7,7 @@ const endpointHelper = require('../helpers/endpoint-helper');
 const fileHelper = require('../helpers/file-helper');
 const remote = require('selenium-webdriver/remote');
 
+
 /** Switch off wait for angular before each test.
  * Since browser restarts between tests, this step could not be moved to onPrepare().
  * onPrepare() runs once for session.
@@ -30,6 +31,16 @@ Before(function () {
                         cmd: 'Page.setDownloadBehavior',
                         params: {behavior: 'allow', downloadPath: browser.params.basePath}
                     };
+                    if(process.platform==="linux")
+                    {
+                        var exec = require('child_process').exec;
+                        let shell_command= "chmod +x "+browser.params.basePath;
+                        var cmd = shell_command;
+                        console.log(shell_command)
+                        exec(cmd, function(error, stdout, stderr) {
+                            // command output is in stdout
+                        });
+                    }
                     /* eslint-disable-next-line */
                     return endpointHelper.sendRequest('POST', `${config.seleniumAddress}/session/${session.id_}/chromium/send_command`, JSON.stringify(params));
                 });

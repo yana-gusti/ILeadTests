@@ -2,7 +2,7 @@ const osHomedir = require('os').homedir;
 const fs = require('fs');
 var path = require('path');
 var fileSep = path.sep;
-const downloadDir = osHomedir() + fileSep + "test";
+const downloadDir = "testfile" + fileSep + "test";
 
 exports.config = thisModule = {
     seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
@@ -42,10 +42,11 @@ exports.config = thisModule = {
         // Maximum number of browser instances that can run in parallel for this
         // set of capabilities. This is only needed if shardTestFiles is true.
         // Default is 1.
-        maxInstances: 3,
+        maxInstances: 5,
     },
 
-    specs: ['src/features/ilead-features/*.feature'],
+    //specs: ['src/features/ilead-features/*.feature'],
+    specs:['src/features/ilead-features/func_test.feature'],
 
     baseURL: '',
 

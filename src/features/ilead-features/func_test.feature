@@ -59,7 +59,7 @@ Feature: Check the basics functional
     Then Tost "homePage|toastcontainer" text is equal to "Enter the field"
     When User enters "samsung" in TextBox "homePage|companiesIP"
     When User presses Enter key
-    Then Result "homePage|boxMain" text is equal to ""
+    Then Result "homePage|toastcontainer" text is equal to "Please input correct company domain name. Example: ilead.io"
     When User refreshes page
     When User enters "samsung.com" in TextBox "homePage|companiesIP"
     When User presses Enter key

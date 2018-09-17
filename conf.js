@@ -19,7 +19,7 @@ exports.config = thisModule = {
         chromeOptions: {
             args: ['disable-gpu', 'window-size=1920,1080',
                 'test-type=browser', 'incognito',
-                'disable-application-cache'],
+                'disable-application-cache','headless'],
             // Set download path and avoid prompting for download even though
             // this is already the default on Chrome but for completeness
             prefs: {

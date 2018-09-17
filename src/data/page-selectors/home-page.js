@@ -46,4 +46,7 @@ module.exports = {
     domainSearchBtn: '#domainSearchBtn',
     domainSearchInpt: '#domainSearchInpt',
     count:'.count',
+    ipValue:'#ipValue',
+    countryField:'.col.s-9.s-offset-1.text-content',
+    findBtn:'#findBtn'
 };

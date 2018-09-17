@@ -3,7 +3,7 @@ Feature: Check the basics functional
   Background: Login and open home page
     Given User navigates to "ILead_SignIn_Page"
     When User clicks button "loginPage|goToOlderFormButton"
-    When User enters "kokriashkina@exedel.com" in textboxemail "loginPage|emailfield"
+    When User enters "kokriashkina@exedel.com" in textbox "loginPage|emailfield"
     When User enters "12345678" in textboxpassword "loginPage|passwordfield"
     When User clicks butttonLogin "loginPage|singInButton"
 
@@ -133,3 +133,11 @@ Feature: Check the basics functional
     When User enters "gmail.com" in TextBox "homePage|domainSearchInpt"
     When User clicks button "homePage|domainSearchBtn"
     Then Span "homePage|count" text is not equal to "0"
+
+  Scenario: 13: Check IP checker
+    When User clicks button "homePage|maintabsitem" with text "IP checker"
+    When User waits 3 seconds
+    When User clears text from textbox "homePage|ipValue"
+    When User enters "194.42.1.1" in textBox "homePage|ipValue"
+    When User clicks button "homePage|findBtn"
+    When User clicks field "homePage|countryField" with text "Cyprus"

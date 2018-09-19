@@ -10,9 +10,9 @@ exports.config = thisModule = {
     allScriptsTimeout: 60000,//60 seconds
     ignoreUncaughtExceptions: true, //This allows cucumber to handle the exception and record it appropriately.
     framework: 'custom',
+    restartBrowserBetweenTests: true,
     // path relative to the current config file
     frameworkPath: require.resolve('protractor-cucumber-framework'),
-    restartBrowserBetweenTests: true,
     capabilities: {
         'browserName': 'chrome',
         acceptSslCerts: true,
@@ -46,8 +46,9 @@ exports.config = thisModule = {
         maxInstances: 5,
     },
 
-    specs: ['src/features/ilead-features/*.feature'],
-    //specs:['src/features/ilead-features/func_test.feature'],
+    //specs: ['src/features/ilead-features/*.feature'],
+    specs:['src/features/ilead-features/func_test.feature'],
+    //specs: ['src/features/ilead-features/reg_and_login.feature'],
 
     baseURL: '',
 
@@ -85,7 +86,7 @@ exports.config = thisModule = {
             automaticallyGenerateReport: true,
             displayDuration: true,
             durationInMS: true,
-            saveCollectedJSON: true
+            saveCollectedJSON: false
         }
     }]
 };

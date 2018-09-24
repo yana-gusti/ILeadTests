@@ -86,7 +86,7 @@ exports.config = thisModule = {
             automaticallyGenerateReport: true,
             displayDuration: true,
             durationInMS: true,
-            saveCollectedJSON: false
+            saveCollectedJSON: true,
         }
     }]
 };

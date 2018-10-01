@@ -46,8 +46,8 @@ exports.config = thisModule = {
         maxInstances: 5,
     },
 
-    specs: ['src/features/ilead-features/*.feature'],
-    //specs:['src/features/ilead-features/func_test.feature'],
+    //specs: ['src/features/ilead-features/*.feature'],
+    specs:['src/features/ilead-features/func_test.feature'],
     //specs:['src/features/ilead-features/home_test_page.feature'],
     //specs: ['src/features/ilead-features/reg_and_login.feature'],
 
@@ -85,9 +85,12 @@ exports.config = thisModule = {
         options: {
             // read the options part https://www.npmjs.com/package/protractor-multiple-cucumber-html-reporter-plugin#options
             automaticallyGenerateReport: true,
+            removeExistingJsonReportFile: true,
+            removeOriginalJsonReportFile: true,
             displayDuration: true,
             durationInMS: true,
             saveCollectedJSON: true,
+
         }
     }]
 };

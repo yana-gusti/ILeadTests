@@ -1,37 +1,37 @@
 Feature: Check the basics functional
 
   Background: Login and open home page
-    Given User navigates to "ILead_SignIn_Page"
-    When User clicks button "loginPage|olderFormButton"
-    When User enters "kokriashkina@exedel.com" in textboxemail "loginPage|emailbox"
+    Given User navigates to "ILead_Start_Page"
+    When User enters "kokriashkina@exedel.com" in textboxemail "loginPage|emailfield"
     When User enters "12345678" in textboxpassword "loginPage|passwordfield"
     When User clicks butttonLogin "loginPage|singInButton"
+#
+#  Scenario: 1: Check email positive test
+#    When User enters "dimson.song@gmail.com" in emailbox "homePage|emailcheckfield"
+#    When User presses Enter key
+#    Then Result "homePage|toastcontainer" is not displayed
+#    Then Result "homePage|scoreHolderValue" is displayed
+#    Then Result "homePage|scoreHolderValue" text is equal to "100"
+#
+#    Scenario: 2: Check email negative test with not correct email
+#    When User enters "dimson.song@gmailcom" in emailbox "homePage|emailcheckfield"
+#    When User presses Enter key
+#    Then Tost "homePage|toastcontainer" text is equal to "Type correct email!"
+#    Then Result "homePage|scoreHolderValue" is not displayed
+#
+#  Scenario: 3: Check email negative test with empty field
+#    When User enters "" in emailbox "homePage|emailcheckfield"
+#    When User clicks button "homePage|emailVerifyBtn"
+#    Then Tost "homePage|toastcontainer" text is equal to "Type correct email!"
+#    Then Result "homePage|scoreHolderValue" is not displayed
 
-  Scenario: 1: Check email positive test
-    When User enters "dimson.song@gmail.com" in emailbox "homePage|emailcheckfield"
-    When User presses Enter key
-    Then Result "homePage|toastcontainer" is not displayed
-    Then Result "homePage|scoreHolderValue" is displayed
-    Then Result "homePage|scoreHolderValue" text is equal to "100"
-
-  Scenario: 2: Check email negative test with not correct email
-    When User enters "dimson.song@gmailcom" in emailbox "homePage|emailcheckfield"
-    When User presses Enter key
-    Then Tost "homePage|toastcontainer" text is equal to "Type correct email!"
-    Then Result "homePage|scoreHolderValue" is not displayed
-
-  Scenario: 3: Check email negative test with empty field
-    When User enters "" in emailbox "homePage|emailcheckfield"
-    When User clicks button "homePage|emailVerifyBtn"
-    Then Tost "homePage|toastcontainer" text is equal to "Type correct email!"
-    Then Result "homePage|scoreHolderValue" is not displayed
-
-  Scenario: 4: Check email positive test with unavailiable email
-    When User enters "john.smith@gmail.com" in emailbox "homePage|emailcheckfield"
-    When User presses Enter key
-    Then Result "homePage|toastcontainer" is not displayed
-    Then Result "homePage|scoreHolderValue" is displayed
-    Then Result "homePage|scoreHolderValue" text is equal to "10"
+#  Scenario: 4: Check email positive test with unavailiable email
+#    When User enters "john.smith@gmail.com" in emailbox "homePage|emailcheckfield"
+#    When User presses Enter key
+#    Then Result "homePage|toastcontainer" is not displayed
+#    Then Result "homePage|scoreHolderValue" is displayed
+#    When User waits 3 seconds
+#    Then Result "homePage|scoreHolderValue" contains "10" text
 
   Scenario: 5: Check work Recently checked
     When User enters "john.smith@gmail.com" in emailbox "homePage|emailcheckfield"
@@ -59,7 +59,8 @@ Feature: Check the basics functional
     Then Tost "homePage|toastcontainer" text is equal to "Enter the field"
     When User enters "samsung" in TextBox "homePage|companiesIP"
     When User presses Enter key
-    Then Result "homePage|toastcontainer" text is equal to "Please input correct company domain name. Example: ilead.io"
+    When User waits 3 seconds
+    Then Result "homePage|boxMain" text is equal to ""
     When User refreshes page
     When User enters "samsung.com" in TextBox "homePage|companiesIP"
     When User presses Enter key
@@ -86,11 +87,11 @@ Feature: Check the basics functional
     When User clicks 1 item in "homePage|listItemValue" collection
     When User refreshes page
     Then EmailFilter "homePage|checkFieldTitle" text is equal to "100 % (2)"
-    Given User navigates to "ILead_Home_Page"
 
   Scenario: 9:Check create key for use API
     When User clicks button "homePage|maintabsitem" with text "Use API"
     When User clicks button "homePage|createKeyBtn"
+    When User waits 3 seconds
     Then Result "homePage|keysContainer" is displayed
 
   Scenario: 10:Check UI home page
@@ -104,8 +105,10 @@ Feature: Check the basics functional
     Then Menu "homePage|contactsMenu" text is equal to "Contacts"
     When User clicks menu "homePage|secondarymenulink" with text "API"
     When User goes to 1 browser tab
+    When User waits 3 seconds
     Then Menu "homePage|logout" text is equal to "Sign out"
     When User clicks menu "homePage|companiesMenu"
+    Then Button "homePage|emailVerifyBtn" text is equal to "Check"
     Then Attribute "placeholder" of field "homePage|companiesIP" is equal to "example.com"
     When User clicks menu "homePage|emailsMenu"
     When User clicks button "homePage|maintabsitem" with text "Bulk checker"
@@ -121,23 +124,3 @@ Feature: Check the basics functional
     When User clicks listItem "homePage|listItemName" with text "Emails Bulk(192).csv"
     When User clicks button "homePage|saveAsCsv"
     Then Downloaded file with name contains "Emails Bulk(192),.csv" exists
-
-  Scenario: 12: Check domain search(positive and negativ case)
-    When User clicks button "homePage|maintabsitem" with text "Domain search"
-    When User clicks button "homePage|domainSearchBtn"
-    Then Tost "homePage|toastcontainer" text is equal to "Type domain, please!"
-    When User enters "samsung.com" in TextBox "homePage|domainSearchInpt"
-    When User clicks button "homePage|domainSearchBtn"
-    Then Span "homePage|count" text is equal to "29"
-    When User clears text from field "homePage|domainSearchInpt"
-    When User enters "gmail.com" in TextBox "homePage|domainSearchInpt"
-    When User clicks button "homePage|domainSearchBtn"
-    Then Span "homePage|count" text is not equal to "0"
-
-  Scenario: 13: Check IP checker
-    When User clicks button "homePage|maintabsitem" with text "IP checker"
-    When User waits 3 seconds
-    When User clears text from textbox "homePage|ipValue"
-    When User enters "194.42.1.1" in textBox "homePage|ipValue"
-    When User clicks button "homePage|findBtn"
-    When User clicks field "homePage|countryField" with text "Cyprus"

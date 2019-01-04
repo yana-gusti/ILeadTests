@@ -51,5 +51,6 @@ module.exports = {
     ipValue:'#ipValue',
     countryField:'.col.s-9.s-offset-1.text-content',
     findBtn:'#findBtn',
-    errorMessage: ".toast-message"
+    errorMessage: ".toast-message",
+    errorcontainer: '.error'
 };

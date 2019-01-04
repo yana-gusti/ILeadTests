@@ -204,3 +204,13 @@ When('User clicks {int} item in {css} collection with text {text}', (itemNumber,
     const collection = element.all(by.cssContainingText(cssLocator, text));
     return helper.clickOnElement(collection.get(itemNumber - 1));
 });
+
+When('User clicks {detail} {css} by executing script', function (_, css) {
+    const elem = helper.getElementByCss(css);
+    return browser.executeScript('arguments[0].click()', elem.getWebElement());
+});
+
+When('User clicks {detail} {css} with text {string} by executing script', function (_, css, text) {
+    const elem = helper.getElementByCssContainingText(css, text);
+    return browser.executeScript('arguments[0].click()', elem.getWebElement());
+});

@@ -47,9 +47,9 @@ exports.config = thisModule = {
     },
 
     //specs: ['src/features/ilead-features/*.feature'],
-    specs:['src/features/ilead-features/func_test.feature'],
-    //specs:['src/features/ilead-features/home_test_page.feature'],
-    //specs: ['src/features/ilead-features/reg_and_login.feature'],
+    //specs:['src/features/ilead-features/func_test.feature'],
+    // specs:['src/features/ilead-features/home_test_page.feature'],
+    specs: ['src/features/ilead-features/reg_and_login.feature'],
 
     baseURL: '',
 

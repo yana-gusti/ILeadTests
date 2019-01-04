@@ -8,7 +8,8 @@ module.exports = {
     companiesIP: '#ip',
     resultContainer: '#resultContainer',
     secondarymenulink: '.secondary-menu-link',
-    maintabsitem: '.main-tabs-item',
+    maintabsitem: '[data-view = emailBulk]',
+    maintabsitemone: '[data-view = emailCheck]',
     emailItemText: '.email-item-text',
     hideIfLoadingButton: '.hide-if-loading',
     logOutButton: '#logout',
@@ -34,6 +35,7 @@ module.exports = {
     checkFieldTitle:'.check-field-title',
     createKeyBtn:'#createKeyBtn',
     keysContainer: '#keysContainer',
+    useApiMenu: '#apiMenu',
     emailsMenu:'#emailsMenu',
     companiesMenu:'#companiesMenu',
     contactsMenu:'#contactsMenu',
@@ -49,4 +51,5 @@ module.exports = {
     ipValue:'#ipValue',
     countryField:'.col.s-9.s-offset-1.text-content',
     findBtn:'#findBtn',
+    errorMessage: ".toast-message"
 };

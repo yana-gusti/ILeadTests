@@ -1,9 +1,7 @@
-const osHomedir = require('os').homedir;
 const fs = require('fs');
-var path = require('path');
-var fileSep = path.sep;
-const downloadDir = "test_file" + fileSep + "test";
-
+const path = require('path');
+const tempDir = __dirname + path.sep + 'automationDownload';
+const downloadDir = path.resolve(tempDir);
 exports.config = thisModule = {
     seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
     getPageTimeout: 60000, //60 sec
@@ -19,7 +17,9 @@ exports.config = thisModule = {
         chromeOptions: {
             args: ['disable-gpu', 'window-size=1920,1080',
                 'test-type=browser', 'incognito',
-                'disable-application-cache','headless'],
+                'disable-application-cache',
+                // 'headless'
+            ],
             // Set download path and avoid prompting for download even though
             // this is already the default on Chrome but for completeness
             prefs: {
@@ -70,9 +70,9 @@ exports.config = thisModule = {
         });
     },
 
-    onComplete: function () {
-        fs.writeFile('storage.json', JSON.stringify(uniqueMap));
-    },
+    // onComplete: function () {
+    //     fs.writeFile('storage.json', JSON.stringify(uniqueMap));
+    // },
 
     params: {
         timeout: 3000,

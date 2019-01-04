@@ -31,6 +31,8 @@
     "webdriver-update": "webdriver-manager update --gecko false --versions.chrome 2.32.498513 --versions.standalone 3.0.0",
     "webdriver": "webdriver-manager start",
     "webdriver-shutdown": "webdriver-manager start --versions.chrome 2.32.498513 --versions.standalone 3.0.0",
+    "prestart-webdriver": "webdriver-manager update",
+    "start-webdriver": "webdriver-manager start",
     "test": "protractor conf.js"
   }
 }

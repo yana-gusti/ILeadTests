@@ -23,12 +23,12 @@ Then('Verification step name', function (callback) {
 //steps "Then Downloaded file with name contains "iLead_contacts_.csv" exists"
 //Check file Ilead_contacts_28-08-18_08-15.csv" is exists
 Then('Downloaded file with name contains {text} exists', function (name) {
-    var currentdate = new Date();
+    let currentdate = new Date();
     let day = currentdate.getDate();
     let month = currentdate.getMonth()+1;
     let year = (currentdate.getFullYear()).toString().charAt(2) + (currentdate.getFullYear()).toString().charAt(3);
-    let hours = currentdate.getHours() - 3;
-    let minuts = currentdate.getMinutes();
+    let hours = currentdate.getUTCHours();
+    let minuts = currentdate.getUTCMinutes();
     if (hours < 10) {
         hours = '0' + hours;
     }
@@ -57,6 +57,7 @@ Then('Downloaded file with name contains {text} exists', function (name) {
 
     }
     const filePath = browser.params.basePath + fileSep + tempname;//generate file path
+    console.log("test");
     console.log(filePath);
     return expect(fileHelper.isFileExist(filePath)).to.eventually.equal(true);
 });
@@ -320,6 +321,7 @@ Then('{detail} list {css} contains values:', function (_, cssLocators, expected)
 
 Then('Downloaded file with name {text} exists', function (name) {
     const filePath = browser.params.basePath + fileSep + name;//generate file path
+    console.log(filePath);
     return expect(fileHelper.isFileExist(filePath)).to.eventually.equal(true);
 });
 
